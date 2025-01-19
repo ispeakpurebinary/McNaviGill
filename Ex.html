@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+        .container {
+            display: flex;                  /* Use flexbox to align items */
+            gap: 100px;                    /* Space between dropdowns */
+            align-items: flex-start;       /* Align items to the top */
+            justify-content: flex-start;    /* Align items to the left */
+        }
+        .menu {
+            display:flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 50px;
+        }
+        .dropdown-group {
+            display: flex;                  /* Make the label and select appear side by side */
+            flex-direction: column;         /* Stack the label on top of the select */
+        }
+        select {
+            padding: 5px;                  /* Add some padding for better appearance */
+            font-size: 16px;               /* Set font size */
+        }
+        .map-container {
+            margin-top: 20px;              /* Space above the map */
+        }
+        label {
+            font-weight: bold;             /* Makes the label bold */
+        }
+        .radio-group {
+            display: flex;                 /* Use flex to align radio buttons */
+            gap: 20px;                     /* Space between radio buttons */
+            margin-top: 10px;              /* Space above the radio buttons */
+        }
+    </style>
+</head>
+<body>
+<script>
+        function home() {
+            window.location.href = "Ex.html"; // Navigate to the desired page
+        }
+    </script>
+<button class="home-button" onclick="home()">Home</button>
+    <h2 style="text-align: center; background-color:Red;"">McNaviGill</h2>
+    <br><br>
+<div class="menu">
+    <div class="container">
+        <div class="dropdown-group">
+            <label for="current-building">Current Building:</label>
+            <select id="current-building">
+                <option value="option1">Burnside</option>
+                <option value="option2">Adam</option>
+                <option value="option3">Maass Chemistry</option>
+                <option value="option4">Macdonald Engineering</option>
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="destination-building">Destination Building:</label>
+            <select id="destination-building">
+                <option value="option1">Burnside</option>
+                <option value="option2">Adam</option>
+                <option value="option3">Maass Chemistry</option>
+                <option value="option4">Macdonald Engineering</option>
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="save-building">Save Route:</label>
+            <select id="save-building">
+                <option value="option">Select...</option>
+                <option value="option1">Save1</option>
+            </select>
+        </div>
+    </div>
+    
+    <form>
+        <div class="radio-group">
+            <input type="radio" id="optimal" name="fav_language" value="optimal">
+            <label for="optimal">Optimal</label>
+            <input type="radio" id="warmest" name="fav_language" value="warmest">
+            <label for="warmest">Warmest</label>
+            <input type="radio" id="custom" name="fav_language" value="custom">
+            <label for="custom">Custom</label>
+        </div>
+</div>
+<br>
+
+<script>
+        function changePage() {
+            // Get the value of the "Current Building" dropdown
+            var selection = document.getElementById("destination-building").value;
+            var selection2 = document.getElementById("save-building").value;
+            // Only change the page if "Macdonald Engineering" (option4) is selected
+            if (selection === "option4") {
+                window.location.href = "file2.html"; // Navigate to the desired page
+            } 
+            if (selection2==="option1"){
+window.location.href="file2.html";}
+            else {
+                alert("Please select 'Macdonald Engineering' to change the page.");
+            }
+        }
+    </script>
+    </form>
+        <button onclick="changePage()">Go to Selected Page</button>
+    <br><br>
+    <div class="map-container">
+        <iframe src="https://maps.mcgill.ca/" width="1000" height="650" style="border:0;" allowfullscreen="" loading="lazy" usemap="#workmap"></iframe>
+    </div>
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="file2.html">
+
+
+</body>
+</html>
+

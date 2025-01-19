@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;                  /* Use flexbox to align items */
+            gap: 100px;                    /* Space between dropdowns */
+            align-items: flex-start;       /* Align items to the top */
+            justify-content: flex-start;    /* Align items to the left */
+        }
+        .menu {
+            display:flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 50px;
+        }
+        .dropdown-group {
+            display: flex;                  /* Make the label and select appear side by side */
+            flex-direction: column;         /* Stack the label on top of the select */
+        }
+        select {
+            padding: 5px;                  /* Add some padding for better appearance */
+            font-size: 16px;               /* Set font size */
+        }
+        .map-container {
+            margin-top: 20px;              /* Space above the map */
+        }
+        label {
+            font-weight: bold;             /* Makes the label bold */
+        }
+        .radio-group {
+            display: flex;                 /* Use flex to align radio buttons */
+            gap: 20px;                     /* Space between radio buttons */
+            margin-top: 10px;              /* Space above the radio buttons */
+        }
+
+    </style>
+</head>
+<body>
+<script>
+        function home() {
+            window.location.href = "Ex.html"; // Navigate to the desired page
+        }
+    </script>
+<button class="home-button" onclick="home()">Home</button>
+<h2 style="text-align: center; background-color:Red;"">McNaviGill</h2>
+    <br><br>
+<div class="menu">
+    <div class="container">
+        <div class="dropdown-group">
+            <label for="current-building">Current Building:</label>
+            <select id="current-building">
+                <option value="option1">Burnside</option>
+                <option value="option2">Adam</option>
+                <option value="option3">Maass Chemistry</option>
+                <option value="option4">Macdonald Engineering</option>
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="destination-building">Destination Building:</label>
+            <select id="destination-building">
+                <option value="option1">Burnside</option>
+                <option value="option2">Adam</option>
+                <option value="option3">Maass Chemistry</option>
+                <option value="option4">Macdonald Engineering</option>
+            </select>
+        </div>
+<script>
+        document.getElementById('button').addEventListener('click', function() {
+            // Create a new option element
+            const newOption = document.createElement('save');
+            newOption.value = 'save1'; // Set the value of the new option
+            newOption.text = 'save 1'; // Set the text displayed in the dropdown
+            
+            // Append the new option to the dropdown
+            const dropdown = document.getElementById('save-building');
+            dropdown.appendChild(newOption);
+        });
+    </script>
+        <div class="dropdown-group">
+            <label for="save-building">Save Route:</label>
+            <select id="save-building">
+                <option value="option">Select...</option>
+                <option value="option1">Save 1</option>
+            </select>
+        </div>
+    </div>
+    
+    <form>
+        <div class="radio-group">
+            <input type="radio" id="optimal" name="fav_language" value="optimal">
+            <label for="optimal">Optimal</label>
+            <input type="radio" id="warmest" name="fav_language" value="warmest">
+            <label for="warmest">Warmest</label>
+            <input type="radio" id="custom" name="fav_language" value="custom">
+            <label for="custom">Custom</label>
+        </div>
+</div>
+<br>
+<script>
+        function changePage() {
+            // Get the value of the "Current Building" dropdown
+            var selection = document.getElementById("destination-building").value;
+            
+            // Only change the page if "Macdonald Engineering" (option4) is selected
+            if (selection === "option4") {
+                window.location.href = "file2.html"; // Navigate to the desired page
+            } else {
+                alert("Please select 'Macdonald Engineering' to change the page.");
+            }
+        }
+    </script>
+    </form>
+<div class="button-group">
+        <button onclick="changePage()">Go to Selected Page</button>
+        <button type="button" onclick="alert('Route have been save')">Save Route</button>
+<div>
+<br>
+<div class="info-label">Total Distance: 270m </div>
+    <div class="info-label">Total Time: 4 min</div>
+    <div class="info-label">Estimate Arrival Time:11:24 am</div>
+    <div class="info-label">Time Underground: 4 min</div>
+    <br><br>
+ <div class="map-container">
+        <img src="images/BMap.jpg" alt="BMap" width="1000" height="650" usemap="#BMap">
+        <map name="BMap">
+            <area shape="rect" coords="600,300,6500,600" alt="Map" href="file1.html">
+        </map>
+    </div>
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="file2.html">
+</body>
+</html>
+

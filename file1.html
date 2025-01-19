@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;                  /* Use flexbox to align items */
+            gap: 100px;                    /* Space between dropdowns */
+            align-items: flex-start;       /* Align items to the top */
+            justify-content: flex-start;    /* Align items to the left */
+        }
+        .menu {
+            display:flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 50px;
+        }
+        .dropdown-group {
+            display: flex;                  /* Make the label and select appear side by side */
+            flex-direction: column;         /* Stack the label on top of the select */
+        }
+        select {
+            padding: 5px;                  /* Add some padding for better appearance */
+            font-size: 16px;               /* Set font size */
+        }
+        .map-container {
+            margin-top: 20px;              /* Space above the map */
+        }
+        label {
+            font-weight: bold;             /* Makes the label bold */
+        }
+        .radio-group {
+            display: flex;                 /* Use flex to align radio buttons */
+            gap: 20px;                     /* Space between radio buttons */
+            margin-top: 10px;              /* Space above the radio buttons */
+        }
+        .direction {
+            display: flex;                  /* Use flexbox to align items */
+            gap: 50px;                    /* Space between dropdowns */
+            align-items: flex-start;       /* Align items to the top */
+            justify-content: flex-start;    /* Align items to the left */
+        }
+    </style>
+</head>
+<body>
+<script>
+        function home() {
+            window.location.href = "Ex.html"; // Navigate to the desired page
+        }
+    </script>
+<button class="home-button" onclick="home()">Home</button>
+<h2 style="text-align: center; background-color:Red;"">McNaviGill</h2>
+    <br><br>
+<div class="menu">
+    <div class="container">
+        <div class="dropdown-group">
+            <label for="current-building">Current Building:</label>
+            <select id="current-building">
+                <option value="option1">Burnside</option>
+                <option value="option2">Adam</option>
+                <option value="option3">Maass Chemistry</option>
+                <option value="option4">Macdonald Engineering</option>
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="destination-building">Destination Building:</label>
+            <select id="destination-building">
+                <option value="option1">Burnside</option>
+                <option value="option2">Adam</option>
+                <option value="option3">Maass Chemistry</option>
+                <option value="option4">Macdonald Engineering</option>
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label for="save-building">Save Route:</label>
+            <select id="save-building">
+                <option value="option">Select...</option>
+                <option value="option1">Save1</option>
+            </select>
+        </div>
+    </div>
+    
+    <form>
+        <div class="radio-group">
+            <input type="radio" id="optimal" name="fav_language" value="optimal">
+            <label for="optimal">Optimal</label>
+            <input type="radio" id="warmest" name="fav_language" value="warmest">
+            <label for="warmest">Warmest</label>
+            <input type="radio" id="custom" name="fav_language" value="custom">
+            <label for="custom">Custom</label>
+        </div>
+</div>
+<br>
+
+<script>
+       function changePage() {
+            // Get the value of the "Current Building" dropdown
+            var selection = document.getElementById("destination-building").value;
+            var selection2 = document.getElementById("save-building").value;
+            // Only change the page if "Macdonald Engineering" (option4) is selected
+            if (selection === "option4") {
+                window.location.href = "file2.html"; // Navigate to the desired page
+            } 
+            if (selection2==="option1"){
+window.location.href="file2.html";}
+            else {
+                alert("Please select 'Macdonald Engineering' to change the page.");
+            }
+        }
+    </script>
+    </form>
+<div class="button-group">
+        <button onclick="changePage()">Go to Selected Page</button>
+        <button type="button" onclick="alert('Route have been save')">Save Route</button>
+<div>
+    <br><br>
+    <div class="direction">
+        <div><img src="images/Image1.jpg" alt="BMap1" width="500" height="500"></div>
+        <h1>Direction:</h1>
+    </div>
+        <div><img src="images/Image2.jpg" alt="BMap2" width="500" height="500"></div>
+        <div><img src="images/Image3.jpg" alt="BMap3" width="500" height="500"></div>
+        <div><img src="images/Image4.jpg" alt="BMap4" width="500" height="500"></div>
+        <div><img src="images/Image5.jpg" alt="BMap5" width="500" height="500"></div>
+        <div><img src="images/Image6.jpg" alt="BMap6" width="500" height="500"></div>
+        <div><img src="images/Image7.jpg" alt="BMap7" width="500" height="500"></div>
+        <div><img src="images/Image8.jpg" alt="BMap8" width="500" height="500"></div>
+        <div><img src="images/Image9.jpg" alt="BMap9" width="500" height="500"></div>
+        <div><img src="images/Image10.jpg" alt="BMap10" width="500" height="500"></div>
+        <div><img src="images/Image11.jpg" alt="BMap11" width="500" height="500"></div>
+        <div><img src="images/Image12.jpg" alt="BMap12" width="500" height="500"></div>
+        <div><img src="images/Image13.jpg" alt="BMap13" width="500" height="500"></div>
+        <div><img src="images/Image14.jpg" alt="BMap14" width="500" height="500"></div>
+        <div><img src="images/Image15.jpg" alt="BMap15" width="500" height="500"></div>
+        <div><img src="images/Image16.jpg" alt="BMap16" width="500" height="500"></div>
+        <div><img src="images/Image17.jpg" alt="BMap17" width="500" height="500"></div>
+        <div><img src="images/Image18.jpg" alt="BMap18" width="500" height="500"></div>
+</body>
+</html>
+
